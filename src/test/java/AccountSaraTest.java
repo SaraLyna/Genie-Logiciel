@@ -3,14 +3,13 @@ import org.junit.jupiter.api.BeforeEach;
 import static org.junit.Assert.*;  
 
 public class AccountSaraTest {
-	//private Account account;
-	
-	//Refactoring , mais ça ne marche pas
+//     Account account;
+//
 //	@BeforeEach
 //	public void init() {
 //		account = new Account();
 //	}
-	
+//	Refactoring ne marche pas
 	
 	@Test
 	public void testCompte(){
