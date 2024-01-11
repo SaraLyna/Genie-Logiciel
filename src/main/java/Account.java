@@ -17,11 +17,15 @@ public class Account {
 	}
 	
 	public void credit(int n) {
-		this.credit += n;
+		if (n >= 0) {
+			this.credit += n;
+		}
 	}
 	
 	public void debit(int n) {
-		this.debit += n;
+		if (n >= 0) {
+			this.debit += n;
+		}
 	}
 
 }
