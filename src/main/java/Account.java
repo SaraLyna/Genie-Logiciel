@@ -1,7 +1,7 @@
 
 public class Account {
-	int credit;
-	int debit;
+	private int credit;
+	private int debit;
 	
 	public Account() {
 		this.credit=0;
