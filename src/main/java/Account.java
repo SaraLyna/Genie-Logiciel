@@ -15,5 +15,13 @@ public class Account {
 	public int getDebit() {
 		return this.debit;
 	}
+	
+	public void credit(int n) {
+		this.credit += n;
+	}
+	
+	public void debit(int n) {
+		this.debit += n;
+	}
 
 }
