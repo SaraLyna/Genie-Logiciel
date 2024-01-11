@@ -52,12 +52,12 @@ public class AccountSaraTest {
 	}
 	
 	@Test 
-	public void testSoldeAccount() {
+	public void testSoldAccount() {
 		Account account = new Account();
 		account.credit(100);
 		account.debit(20);
 		account.credit(10);
-		assertEquals(90,account.getSolde());
+		assertEquals(90,account.getSold());
 		
 		
 		

@@ -25,5 +25,9 @@ public class Account {
 		if (n >= 0)
 			this.debit += n;
 	}
+	
+	public int getSold() {
+		return this.credit-this.debit;
+	}
 
 }
