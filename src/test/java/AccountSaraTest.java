@@ -35,5 +35,21 @@ public class AccountSaraTest {
 		assertEquals(10, account.getDebit());
 		
 	}
+	
+	
+	@Test 
+	public void testAlwaysPositiveCredit() {
+		Account account = new Account();
+		account.credit(-10);;
+		assertEquals(0, account.getCredit());
+	}
+	
+	
+	@Test 
+	public void testAlwaysPositiveDebit() {
+		Account account = new Account();
+		account.debit(-10);
+		assertEquals(0, account.getDebit());
+	}
 
 }
