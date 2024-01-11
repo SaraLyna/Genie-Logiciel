@@ -39,7 +39,7 @@ public class AccountSaraTest {
 	@Test 
 	public void testAlwaysPositiveCredit() {
 		Account account = new Account();
-		account.credit(-10);;
+		account.credit(-10);
 		assertEquals(0, account.getCredit());
 	}
 	
@@ -49,6 +49,18 @@ public class AccountSaraTest {
 		Account account = new Account();
 		account.debit(-10);
 		assertEquals(0, account.getDebit());
+	}
+	
+	@Test 
+	public void testSoldeAccount() {
+		Account account = new Account();
+		account.credit(100);
+		account.debit(20);
+		account.credit(10);
+		assertEquals(90,account.getSolde());
+		
+		
+		
 	}
 
 }
