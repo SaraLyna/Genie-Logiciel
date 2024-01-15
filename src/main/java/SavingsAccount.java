@@ -28,5 +28,7 @@ public class SavingsAccount extends Account {
     	double balance = getCredit() - getDebit();
     	double interest = balance * interestRate;
     	super.credit(interest);
-    }	
+    }
+    
+    
 }

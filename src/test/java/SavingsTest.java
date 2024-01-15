@@ -55,10 +55,8 @@ public class SavingsTest {
     public void testInterestCalculation() {
         SavingsAccount savingsAccount = new SavingsAccount(0.2);
 
-        savingsAccount.credit(1000); 
-        savingsAccount.calculateInterest(); 
-
-  
+        savingsAccount.credit(1000); // le calcul se fait directement dans la fonction credit()
+   
         assertEquals(1200, savingsAccount.getSold(), 0.01);
     }
 
