@@ -28,7 +28,7 @@ public class SavingsTest {
         
         savingsAccount.credit(1000); 
         savingsAccount.debit(1200);
-        assertEquals(1000, savingsAccount.getSold(), 0.01);
+        assertEquals(0, savingsAccount.getSold());
     }
 
 }

@@ -14,6 +14,13 @@ public class SavingsAccount extends Account {
         }
     }
     
+    @Override
+    public void debit(double amount) {
+        if (amount > 0 && amount <= getSold()) {
+            super.debit(amount);
+        }      
+    }
+    
     
     public void calculateSold() {
     	double balance = getCredit() - getDebit();
