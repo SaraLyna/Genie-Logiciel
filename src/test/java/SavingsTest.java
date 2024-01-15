@@ -50,6 +50,17 @@ public class SavingsTest {
 
         assertEquals(1080, savingsAccount.getSold()); // donc credit total = 1080
     }
+    
+    @Test
+    public void testInterestCalculation() {
+        SavingsAccount savingsAccount = new SavingsAccount(0.02);
+
+        savingsAccount.credit(1000); 
+        savingsAccount.calculateInterest(); 
+
+  
+        assertEquals(1020, savingsAccount.getSold(), 0.01);
+    }
 
     
     
