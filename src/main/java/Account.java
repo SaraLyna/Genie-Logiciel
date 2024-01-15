@@ -4,14 +4,14 @@ import java.util.List;
 public class Account {
 	private int credit;
 	private int debit;
-	private List<Double> creditsHistory;
+	private List<Double> creditsHistory; //utilisation de listes
     private List<Double> debitsHistory;
     private static final int AUTHORIZED = 100000;
 	
 	public Account() {
 		this.credit=0;
 		this.debit=0;
-		this.creditsHistory = new ArrayList<>();
+		this.creditsHistory = new ArrayList<>();//ArrayList 
         this.debitsHistory = new ArrayList<>();
 	}
 	
