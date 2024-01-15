@@ -15,7 +15,6 @@ public class AccountSaraTest {
 	
 	@Test
 	public void testCompte(){
-		//Account account = new Account();
 		assertEquals(0, account.getCredit());
 		assertEquals(0, account.getDebit());
 		
@@ -23,14 +22,12 @@ public class AccountSaraTest {
 	
 	@Test
 	public void testCreditIncrease() {
-		//Account account = new Account();
 		account.credit(20);
 		assertEquals(20, account.getCredit());
 	}
 	
 	@Test
 	public void testDebitIncrease() {
-		//Account account = new Account();
 		account.debit(10);
 		assertEquals(10, account.getDebit());
 		
@@ -39,7 +36,6 @@ public class AccountSaraTest {
 	
 	@Test 
 	public void testAlwaysPositiveCredit() {
-		//Account account = new Account();
 		account.credit(-10);
 		assertEquals(0, account.getCredit());
 	}
@@ -47,14 +43,12 @@ public class AccountSaraTest {
 	
 	@Test 
 	public void testAlwaysPositiveDebit() {
-		//Account account = new Account();
 		account.debit(-10);
 		assertEquals(0, account.getDebit());
 	}
 	
 	@Test 
 	public void testSoldAccount() {
-		//Account account = new Account();
 		account.credit(100);
 		account.debit(20);
 		account.credit(10);
@@ -66,7 +60,6 @@ public class AccountSaraTest {
 	
 	@Test
 	public void testHistorisationCreditsDebits() {
-	        //Account account = new Account();
 	        account.credit(200);
 	        account.credit(50);
 	        account.debit(50);
@@ -100,7 +93,7 @@ public class AccountSaraTest {
 	public void testCreditMontantAutorise() {
 	    Account account = new Account();
 	    account.credit(50000);
-	    account.credit(50000);  // Total crédit : 100000
+	    account.credit(50000);  
 	    account.credit(1000);   // Cette opération doit être ignorée
 	    assertEquals(100000, account.getCredit());
 	}
@@ -109,7 +102,7 @@ public class AccountSaraTest {
 	public void testDebitMontantAutorise() {
 	    Account account = new Account();
 	    account.debit(50000);
-	    account.debit(50000);  // Total débit : 100000
+	    account.debit(50000);  
 	    account.debit(1000);   // Cette opération doit être ignorée
 	    assertEquals(100000, account.getDebit());
 	}

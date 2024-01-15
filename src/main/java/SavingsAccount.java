@@ -8,11 +8,6 @@ public class SavingsAccount extends Account {
         this.interestRate = interestRate;
     }
     
-//    public void credit(double amount) {
-//        if (amount > 0) {
-//            super.credit(amount + amount * interestRate); // Ajoute le montant crédité plus les intérêts
-//        }
-//    }
     
     @Override
     public void debit(double amount) {
@@ -24,15 +19,16 @@ public class SavingsAccount extends Account {
     }
     
     
-    public void calculateSold() {
+    public void calculateInterest() {
     	double balance = getCredit() - getDebit();
     	double interest = balance * interestRate;
     	super.credit(interest);
     }
     
     public void echeance() {
-        calculateSold(); 
+        calculateInterest(); 
     }
+
     
     
 }
