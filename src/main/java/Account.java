@@ -6,6 +6,7 @@ public class Account {
 	private int debit;
 	private List<Double> creditsHistory;
     private List<Double> debitsHistory;
+    private static final int AUTHORIZED = 100000;
 	
 	public Account() {
 		this.credit=0;
@@ -23,14 +24,14 @@ public class Account {
 	}
 	
 	public void credit(int n) {
-		if (n > 0) {
+		if (n > 0 && (credit + n) <= AUTHORIZED) {
 			this.credit += n;
 		 	creditsHistory.add((double) n);
 		}
 	}
 	
 	public void debit(int n) {
-		if (n > 0) {
+		if (n > 0 && (debit + n) <= AUTHORIZED) {
 			this.debit += n;
 			debitsHistory.add((double) n);
 		}
