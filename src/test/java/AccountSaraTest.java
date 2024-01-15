@@ -1,6 +1,8 @@
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
-import static org.junit.Assert.*;  
+import static org.junit.Assert.*;
+
+import java.util.List;  
 
 public class AccountSaraTest {
 //     Account account;
@@ -69,14 +71,17 @@ public class AccountSaraTest {
 	        myCompte.credit(50);
 	        myCompte.debit(50);
 	        myCompte.debit(100);
+	        myCompte.credit(200);
 
-	        double[] credits = myCompte.getCreditsHistory();
-	        assertEquals(250, credits[0], 0.01);  
-	        assertEquals(50, credits[1], 0.01);  
+	        List<Double> credits = myCompte.getCreditsHistory();
+	        assertEquals(200, credits.get(0), 0.01);
+	        assertEquals(50, credits.get(1), 0.01);
+	        assertEquals(200, credits.get(2), 0.01);
+	        
 
-	        double[] debits = myCompte.getDebitsHistory();
-	        assertEquals(150, debits[0], 0.01);   
-	        assertEquals(100, debits[1], 0.01);   
-	    }
+	        List<Double> debits = myCompte.getDebitsHistory();
+	        assertEquals(50, debits.get(0), 0.01);
+	        assertEquals(100, debits.get(1), 0.01);
+	}
 
 }
