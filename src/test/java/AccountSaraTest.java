@@ -29,7 +29,6 @@ public class AccountSaraTest {
 	@Test
 	public void testDebitIncrease() {
 		Account account = new Account();
-		account.credit(20);
 		account.debit(10);
 		assertEquals(10, account.getDebit());
 		
@@ -62,5 +61,22 @@ public class AccountSaraTest {
 		
 		
 	}
+	
+	@Test
+	public void testHistorisationCreditsDebits() {
+	        Account myCompte = new Account();
+	        myCompte.credit(200);
+	        myCompte.credit(50);
+	        myCompte.debit(50);
+	        myCompte.debit(100);
+
+	        double[] credits = myCompte.getCreditsHistory();
+	        assertEquals(250, credits[0], 0.01);  
+	        assertEquals(50, credits[1], 0.01);  
+
+	        double[] debits = myCompte.getDebitsHistory();
+	        assertEquals(150, debits[0], 0.01);   
+	        assertEquals(100, debits[1], 0.01);   
+	    }
 
 }
