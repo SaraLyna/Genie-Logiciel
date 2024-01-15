@@ -22,13 +22,20 @@ public class SavingsTest {
         assertEquals(1440, savingsAccount.getCredit());
     }
     
-    @Test
-    public void testDebitGreaterThanBalance() {
+//    @Test
+//    public void testDebitGreaterThanBalance() {
+//        SavingsAccount savingsAccount = new SavingsAccount(0.2);
+//        
+//        savingsAccount.credit(1000); 
+//        savingsAccount.debit(1200);
+//        assertEquals(0, savingsAccount.getSold());
+//    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testDebitThrowsException() {
         SavingsAccount savingsAccount = new SavingsAccount(0.2);
         
-        savingsAccount.credit(1000); 
+        savingsAccount.credit(1000);
         savingsAccount.debit(1200);
-        assertEquals(0, savingsAccount.getSold());
     }
-
 }
