@@ -21,5 +21,17 @@ public class BankTest {
 	        assertEquals(0, account.getCredit());
 	        assertEquals(0, account.getDebit());
 	    }
+	 
+	 
+	 @Test
+	    public void testOpenSavingsAccount() {
+	        Bank bank = new Bank();
+	        SavingsAccount savingsAccount = bank.openSavingsAccount(0.02); // Taux d'intérêt à 2%
+
+	        assertNotNull(savingsAccount);
+	        assertEquals(0, savingsAccount.getCredit());
+	        assertEquals(0, savingsAccount.getDebit());
+	        assertEquals(0.02, savingsAccount.getInterestRate());
+	    }
 
 }
