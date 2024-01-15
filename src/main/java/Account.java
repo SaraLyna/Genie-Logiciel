@@ -23,14 +23,14 @@ public class Account {
 	}
 	
 	public void credit(int n) {
-		if (n >= 0) {
+		if (n > 0) {
 			this.credit += n;
 		 	creditsHistory.add((double) n);
 		}
 	}
 	
 	public void debit(int n) {
-		if (n >= 0) {
+		if (n > 0) {
 			this.debit += n;
 			debitsHistory.add((double) n);
 		}

@@ -83,5 +83,17 @@ public class AccountSaraTest {
 	        assertEquals(50, debits.get(0), 0.01);
 	        assertEquals(100, debits.get(1), 0.01);
 	}
+	
+	@Test
+	public void testCreditZero() {
+	    account.credit(0);
+	    assertEquals(0, account.getCredit());
+	}
+
+	@Test
+	public void testDebitZero() {
+	    account.debit(0);
+	    assertEquals(0, account.getDebit());
+	}
 
 }
