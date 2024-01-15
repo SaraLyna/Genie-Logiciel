@@ -10,5 +10,16 @@ public class BankTest {
 
 	        assertTrue(bank.getAccounts().isEmpty());
 	    }
+	 
+	 
+	 @Test
+	    public void testOpenAccount() {
+	        Bank bank = new Bank();
+	        Account account = bank.openAccount();
+
+	        assertNotNull(account);
+	        assertEquals(0, account.getCredit());
+	        assertEquals(0, account.getDebit());
+	    }
 
 }
