@@ -95,5 +95,23 @@ public class AccountSaraTest {
 	    account.debit(0);
 	    assertEquals(0, account.getDebit());
 	}
+	
+	@Test
+	public void testCreditMontantAutorise() {
+	    Account account = new Account();
+	    account.credit(50000);
+	    account.credit(50000);  // Total crédit : 100000
+	    account.credit(1000);   // Cette opération doit être ignorée
+	    assertEquals(100000, account.getCredit());
+	}
+
+	@Test
+	public void testDebitMontantAutorise() {
+	    Account account = new Account();
+	    account.debit(50000);
+	    account.debit(50000);  // Total débit : 100000
+	    account.debit(1000);   // Cette opération doit être ignorée
+	    assertEquals(100000, account.getDebit());
+	}
 
 }
