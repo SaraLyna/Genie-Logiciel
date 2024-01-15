@@ -21,5 +21,14 @@ public class SavingsTest {
         savingsAccount.calculateSold();
         assertEquals(1440, savingsAccount.getCredit());
     }
+    
+    @Test
+    public void testDebitGreaterThanBalance() {
+        SavingsAccount savingsAccount = new SavingsAccount(0.2);
+        
+        savingsAccount.credit(1000); 
+        savingsAccount.debit(1200);
+        assertEquals(1000, savingsAccount.getSold(), 0.01);
+    }
 
 }
