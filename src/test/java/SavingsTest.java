@@ -24,9 +24,9 @@ public class SavingsTest {
         SavingsAccount savingsAccount = new SavingsAccount(0.2); 
         
         savingsAccount.credit(1000);
-        assertEquals(1200, savingsAccount.getCredit());
+        assertEquals(1000, savingsAccount.getCredit());
         savingsAccount.calculateSold();
-        assertEquals(1440, savingsAccount.getCredit());
+        assertEquals(1200, savingsAccount.getCredit());
     }
     
 //    @Test
@@ -42,32 +42,33 @@ public class SavingsTest {
     public void testDebitThrowsException() {
         SavingsAccount savingsAccount = new SavingsAccount(0.2);
 
-        savingsAccount.credit(900);// crédite 900 + 180 d'interets
+        savingsAccount.credit(900);
 
         assertThrows(IllegalArgumentException.class, () -> 
             savingsAccount.debit(1200)
         );
 
-        assertEquals(1080, savingsAccount.getSold()); // donc credit total = 1080
+        assertEquals(900, savingsAccount.getSold()); 
     }
     
     @Test
     public void testInterestCalculation() {
         SavingsAccount savingsAccount = new SavingsAccount(0.2);
 
-        savingsAccount.credit(1000); // le calcul se fait directement dans la fonction credit()
-   
+        savingsAccount.credit(1000); 
+        savingsAccount.calculateSold();
+        
         assertEquals(1200, savingsAccount.getSold(), 0.01);
     }
     
     @Test
     public void testEcheance() {
-        SavingsAccount savingsAccount = new SavingsAccount(0.02);
+        SavingsAccount savingsAccount = new SavingsAccount(0.2);
 
         savingsAccount.credit(1000); 
         savingsAccount.echeance();
         
-        assertEquals(1020, savingsAccount.getSold(), 0.01);
+        assertEquals(1200, savingsAccount.getSold());
     }
 
     
