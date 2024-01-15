@@ -26,12 +26,12 @@ public class BankTest {
 	 @Test
 	    public void testOpenSavingsAccount() {
 	        Bank bank = new Bank();
-	        SavingsAccount savingsAccount = bank.openSavingsAccount(0.02); // Taux d'intérêt à 2%
+	        SavingsAccount savingsAccount = bank.openSavingsAccount(0.2); 
 
 	        assertNotNull(savingsAccount);
 	        assertEquals(0, savingsAccount.getCredit());
 	        assertEquals(0, savingsAccount.getDebit());
-	        assertEquals(0.02, savingsAccount.getInterestRate());
+	        assertEquals(0.2, savingsAccount.getInterestRate(), 0.01);
 	    }
 
 }

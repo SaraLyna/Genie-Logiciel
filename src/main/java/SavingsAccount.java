@@ -8,6 +8,9 @@ public class SavingsAccount extends Account {
         this.interestRate = interestRate;
     }
     
+    public double getInterestRate() {
+    	return this.interestRate;
+    }
     
     @Override
     public void debit(double amount) {
