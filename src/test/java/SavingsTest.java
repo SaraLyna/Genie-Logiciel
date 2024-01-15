@@ -53,13 +53,13 @@ public class SavingsTest {
     
     @Test
     public void testInterestCalculation() {
-        SavingsAccount savingsAccount = new SavingsAccount(0.02);
+        SavingsAccount savingsAccount = new SavingsAccount(0.2);
 
         savingsAccount.credit(1000); 
         savingsAccount.calculateInterest(); 
 
   
-        assertEquals(1020, savingsAccount.getSold(), 0.01);
+        assertEquals(1200, savingsAccount.getSold(), 0.01);
     }
 
     
