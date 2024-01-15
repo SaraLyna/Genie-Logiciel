@@ -59,6 +59,16 @@ public class SavingsTest {
    
         assertEquals(1200, savingsAccount.getSold(), 0.01);
     }
+    
+    @Test
+    public void testEcheance() {
+        SavingsAccount savingsAccount = new SavingsAccount(0.02);
+
+        savingsAccount.credit(1000); 
+        savingsAccount.echeance();
+        
+        assertEquals(1020, savingsAccount.getSold(), 0.01);
+    }
 
     
     
