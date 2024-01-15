@@ -5,7 +5,7 @@ public class SavingsTest {
 
     @Test
     public void testCreationSavingsAccount() {
-        SavingsAccount savingsAccount = new SavingsAccount(0.02);// taux d'interets à 2%
+        SavingsAccount savingsAccount = new SavingsAccount(0.2);// taux d'interets à 20%
         
         assertEquals(0, savingsAccount.getCredit());
         assertEquals(0, savingsAccount.getDebit());
@@ -14,12 +14,12 @@ public class SavingsTest {
     
     @Test
     public void testCreditAndCalculateSold() {
-        SavingsAccount savingsAccount = new SavingsAccount(0.02); 
+        SavingsAccount savingsAccount = new SavingsAccount(0.2); 
         
         savingsAccount.credit(1000);
-        assertEquals(1020, savingsAccount.getSold(), 0.01);
+        assertEquals(1200, savingsAccount.getCredit());
         savingsAccount.calculateSold();
-        assertEquals(1040.4, savingsAccount.getSold(), 0.01);
+        assertEquals(1440, savingsAccount.getCredit());
     }
 
 }

@@ -23,14 +23,14 @@ public class Account {
 		return this.debit;
 	}
 	
-	public void credit(int n) {
+	public void credit(double n) {
 		if (n > 0 && (credit + n) <= AUTHORIZED) {
 			this.credit += n;
 		 	creditsHistory.add((double) n);
 		}
 	}
 	
-	public void debit(int n) {
+	public void debit(double n) {
 		if (n > 0 && (debit + n) <= AUTHORIZED) {
 			this.debit += n;
 			debitsHistory.add((double) n);
