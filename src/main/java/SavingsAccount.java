@@ -18,7 +18,9 @@ public class SavingsAccount extends Account {
     public void debit(double amount) {
         if (amount > 0 && amount <= getSold()) {
             super.debit(amount);
-        }      
+        }else {
+            throw new IllegalArgumentException("Le montant du débit est supérieur au solde.");
+        }    
     }
     
     
