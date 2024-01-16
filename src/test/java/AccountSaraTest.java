@@ -1,13 +1,14 @@
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class AccountSaraTest {
      private Account account;
 
-	@Before
+	@BeforeEach
 	public void init() {
 		account = new Account();
 	}

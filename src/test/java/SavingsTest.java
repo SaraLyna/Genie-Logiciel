@@ -1,7 +1,8 @@
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 
 
@@ -9,7 +10,7 @@ import org.junit.Test;
 public class SavingsTest {
 	private SavingsAccount savingsAccount;
 
-	@Before
+	@BeforeEach
 	public void init() {
 		savingsAccount = new SavingsAccount(0.2);//20% taux d'interets
 	}
@@ -58,7 +59,7 @@ public class SavingsTest {
         savingsAccount.credit(1000); 
         savingsAccount.calculateInterest();
         
-        assertEquals(1200, savingsAccount.getSold(), 0.01);
+        assertEquals(1200, savingsAccount.getSold());
     }
     
     @Test
