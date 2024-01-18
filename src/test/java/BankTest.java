@@ -1,6 +1,7 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -96,5 +97,15 @@ public class BankTest {
 	        bank.debitSavingsAccount(savingsAccount.getNumber(), 50);
 	        assertEquals(150, savingsAccount.getSold());
 	    }
+	    
+	    
+	    @Test
+	    public void testGetAccountByInvalidNumber() {
+	        Bank bank = new Bank();
+	        bank.openAccount();
+	        assertThrows(IllegalArgumentException.class, () -> bank.getAccountByNumber(22));
+	        
+	    }
+	    
 
 }
