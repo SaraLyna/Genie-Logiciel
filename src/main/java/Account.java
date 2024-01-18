@@ -7,12 +7,14 @@ public class Account {
 	private List<Double> creditsHistory; //utilisation de listes
     private List<Double> debitsHistory;
     private static final int AUTHORIZED = 100000;
+    private int number;
 	
-	public Account() {
+	public Account(int number) {
 		this.credit=0;
 		this.debit=0;
 		this.creditsHistory = new ArrayList<>();//ArrayList 
         this.debitsHistory = new ArrayList<>();
+        this.number = number;
 	}
 	
 	public int getCredit() {
@@ -21,6 +23,10 @@ public class Account {
 	
 	public int getDebit() {
 		return this.debit;
+	}
+	
+	public int getNumber() {
+		return this.number;
 	}
 	
 	public void credit(double n) {

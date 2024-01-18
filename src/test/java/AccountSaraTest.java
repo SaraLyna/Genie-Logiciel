@@ -10,7 +10,7 @@ public class AccountSaraTest {
 
 	@BeforeEach
 	public void init() {
-		account = new Account();
+		account = new Account(0);
 	}
 	
 	
@@ -92,7 +92,6 @@ public class AccountSaraTest {
 	
 	@Test
 	public void testCreditMontantAutorise() {
-	    Account account = new Account();
 	    account.credit(50000);
 	    account.credit(50000);  
 	    account.credit(1000);   // Cette opération doit être ignorée
@@ -101,7 +100,6 @@ public class AccountSaraTest {
 
 	@Test
 	public void testDebitMontantAutorise() {
-	    Account account = new Account();
 	    account.debit(50000);
 	    account.debit(50000);  
 	    account.debit(1000);   // Cette opération doit être ignorée

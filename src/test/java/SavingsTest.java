@@ -12,7 +12,7 @@ public class SavingsTest {
 
 	@BeforeEach
 	public void init() {
-		savingsAccount = new SavingsAccount(0.2);//20% taux d'interets
+		savingsAccount = new SavingsAccount(0.2,1);//20% taux d'interets
 	}
 
     @Test

@@ -1,15 +1,22 @@
-import java.util.*;
+//import java.util.*;
 
 public class SavingsAccount extends Account {
     private double interestRate;
+    private int number;
 
-    public SavingsAccount(double interestRate) {
-        super(); 
+    public SavingsAccount(double interestRate, int number) {
+        super(number); 
         this.interestRate = interestRate;
+        this.number = number;
     }
     
     public double getInterestRate() {
     	return this.interestRate;
+    }
+    
+    
+    public int getNumber() {
+    	return this.number;
     }
     
     @Override

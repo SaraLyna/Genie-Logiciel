@@ -28,7 +28,7 @@ public class BankTest {
 	 @Test
 	    public void testOpenSavingsAccount() {
 	        Bank bank = new Bank();
-	        SavingsAccount savingsAccount = bank.openSavingsAccount(0.2); 
+	        SavingsAccount savingsAccount = bank.openSavingsAccount(0.2,0); 
 
 	        assertNotNull(savingsAccount);
 	        assertEquals(0, savingsAccount.getCredit());
@@ -51,8 +51,8 @@ public class BankTest {
 	    @Test
 	    public void testGetSavingsAccountByNumber() {
 	        Bank bank = new Bank();
-	        SavingsAccount savingsAccount1 = bank.openSavingsAccount(0.2);
-	        SavingsAccount savingsAccount2 = bank.openSavingsAccount(0.3); 
+	        SavingsAccount savingsAccount1 = bank.openSavingsAccount(0.2, 0);
+	        SavingsAccount savingsAccount2 = bank.openSavingsAccount(0.3, 1); 
 
 
 	        assertEquals(savingsAccount1, bank.getSavingsAccountByNumber(0));
@@ -81,19 +81,19 @@ public class BankTest {
 	    @Test
 	    public void testCreditSavingsAccount() {
 	        Bank bank = new Bank();
-	        SavingsAccount savingsAccount = bank.openSavingsAccount(0.2);
+	        SavingsAccount savingsAccount = bank.openSavingsAccount(0.2,0);
 
-	        bank.creditAccount(savingsAccount.getNumber(), 100);
+	        bank.creditSavingsAccount(savingsAccount.getNumber(), 100);
 	        assertEquals(100, savingsAccount.getSold());
 	    }
 
 	    @Test
 	    public void testDebitSavingsAccount() {
 	        Bank bank = new Bank();
-	        SavingsAccount savingsAccount = bank.openSavingsAccount(0.2);
+	        SavingsAccount savingsAccount = bank.openSavingsAccount(0.2,0);
 	        
-	        bank.creditAccount(savingsAccount.getNumber(), 200);
-	        bank.debitAccount(savingsAccount.getNumber(), 50);
+	        bank.creditSavingsAccount(savingsAccount.getNumber(), 200);
+	        bank.debitSavingsAccount(savingsAccount.getNumber(), 50);
 	        assertEquals(150, savingsAccount.getSold());
 	    }
 
