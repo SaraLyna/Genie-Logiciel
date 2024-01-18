@@ -107,5 +107,48 @@ public class BankTest {
 	        
 	    }
 	    
+	    
+	    @Test
+	    public void testTransferMoneyBetweenAccounts() {
+	        Bank bank = new Bank();
+	        Account sourceAccount = bank.openAccount();
+	        Account destinationAccount = bank.openAccount();
+
+	        sourceAccount.credit(200);
+	        bank.transferMoney(sourceAccount.getNumber(), destinationAccount.getNumber(), 100);
+	        assertEquals(100, sourceAccount.getSold());
+	        assertEquals(100, destinationAccount.getSold());
+	    }
+
+	    @Test
+	    public void testTransferMoneyFromSavingsAccount() {
+	        Bank bank = new Bank();
+	        SavingsAccount sourceAccount = bank.openSavingsAccount(0.2, 1);
+	        Account destinationAccount = bank.openAccount();
+
+	        sourceAccount.credit(200);
+	        bank.transferMoney(sourceAccount.getNumber(), destinationAccount.getNumber(), 100);
+	        assertEquals(100, sourceAccount.getSold());
+	        assertEquals(100, destinationAccount.getSold());
+	    }
+
+	    @Test
+	    public void testTransferMoneyInvalidSourceAccount() {
+	        Bank bank = new Bank();
+	        Account destinationAccount = bank.openAccount();
+
+	        assertThrows(IllegalArgumentException.class, 
+	        		() -> bank.transferMoney(1, destinationAccount.getNumber(), 50));
+	    }
+
+	    @Test
+	    public void testTransferMoneyInvalidDestinationAccount() {
+	        Bank bank = new Bank();
+	        Account sourceAccount = bank.openAccount();
+
+	        assertThrows(IllegalArgumentException.class,
+	                () -> bank.transferMoney(sourceAccount.getNumber(), 2, 50));
+	    }
+	    
 
 }
