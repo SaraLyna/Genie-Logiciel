@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
+
 public class BankTest {
 	
 	 @Test
@@ -114,22 +115,22 @@ public class BankTest {
 	        Account sourceAccount = bank.openAccount();
 	        Account destinationAccount = bank.openAccount();
 
-	        sourceAccount.credit(200);
-	        bank.transferMoney(sourceAccount.getNumber(), destinationAccount.getNumber(), 100);
-	        assertEquals(100, sourceAccount.getSold());
-	        assertEquals(100, destinationAccount.getSold());
+	        bank.creditAccount(1,200);
+	        bank.transferMoney(sourceAccount.getNumber(), destinationAccount.getNumber(), 200);
+	        assertEquals(0, sourceAccount.getSold());
+	        assertEquals(200, destinationAccount.getSold());
 	    }
 
 	    @Test
 	    public void testTransferMoneyFromSavingsAccount() {
 	        Bank bank = new Bank();
-	        SavingsAccount sourceAccount = bank.openSavingsAccount(0.2, 1);
-	        Account destinationAccount = bank.openAccount();
+	        SavingsAccount destinationAccount = bank.openSavingsAccount(0.2, 0);
+	        Account sourceAccount = bank.openAccount();
 
-	        sourceAccount.credit(200);
-	        bank.transferMoney(sourceAccount.getNumber(), destinationAccount.getNumber(), 100);
-	        assertEquals(100, sourceAccount.getSold());
-	        assertEquals(100, destinationAccount.getSold());
+	        bank.creditSavingsAccount(0,200);
+	        bank.transferMoney(sourceAccount.getNumber(),destinationAccount.getNumber(), 200);
+	        assertEquals(0, sourceAccount.getSold());
+	        assertEquals(200, destinationAccount.getSold());
 	    }
 
 	    @Test

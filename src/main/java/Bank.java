@@ -62,4 +62,18 @@ public class Bank {
         SavingsAccount savingsAccount = getSavingsAccountByNumber(accountNumber);
         savingsAccount.debit(amount);
     }
+    
+    
+    public void transferMoney(int sourceAccountNumber, int destinationAccountNumber, double amount) {
+        Account sourceAccount = getAccountByNumber(sourceAccountNumber);
+        Account destinationAccount = getAccountByNumber(destinationAccountNumber);
+
+        if (sourceAccount instanceof SavingsAccount) {
+            ((SavingsAccount) sourceAccount).debit(amount);
+        } else {
+            sourceAccount.debit(amount);
+        }
+
+        destinationAccount.credit(amount);
+    }
 }
